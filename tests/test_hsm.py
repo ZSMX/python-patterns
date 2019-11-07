@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import unittest
-from other.hsm.hsm import (
+from unittest.mock import patch
+
+from patterns.other.hsm.hsm import (
     HierachicalStateMachine,
     UnsupportedMessageType,
     UnsupportedState,
@@ -10,11 +12,6 @@ from other.hsm.hsm import (
     Standby,
     Suspect,
 )
-
-try:
-    from unittest.mock import patch
-except ImportError:
-    from mock import patch
 
 
 class HsmMethodTest(unittest.TestCase):
